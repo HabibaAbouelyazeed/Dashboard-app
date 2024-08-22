@@ -1,0 +1,24 @@
+<aside class="sidebar-container" [class.closed-sidebar]="isSidebarClosed">
+    <div class="sidebar-header w-100 d-flex">
+        <span [class.hidden]="isSidebarClosed">
+            <img src="../../../assets/images/Logo.svg" alt="logo">
+        </span>
+        <p [class.hidden]="isSidebarClosed">
+            Reminder
+        </p>
+        <span class="material-symbols-outlined sidebar-icon" (click)="toggleSidebar()">apps</span>
+    </div>
+
+    <ul class="w-100 nav-items">
+        @for (item of navPages; track $index) {
+            <li class="nav-item">
+                <a class="d-flex nav" [routerLink]="item.route" routerLinkActive="activeRoute">
+                    <span class="material-symbols-outlined nav-icon">{{item.icon}}</span>
+                    <span [class.hidden]="isSidebarClosed" class="nav-title">
+                        {{item.title}}
+                    </span>
+                </a>
+            </li>
+        }
+    </ul>
+</aside>

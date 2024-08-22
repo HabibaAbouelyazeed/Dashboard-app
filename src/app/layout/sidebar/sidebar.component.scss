@@ -1,0 +1,53 @@
+.sidebar-container{
+    background-color: var(--gray);
+    width: 20rem;
+    height: 100vh;
+    transition: all ease-in-out 0.5s;
+    &.closed-sidebar{
+        width: 4rem;
+    }
+
+    .sidebar-header{
+        gap: 1rem;
+        background-color: var(--light);
+        padding:  1.5rem 1rem;
+        font-size: 2rem;
+        .sidebar-icon{
+            margin-inline-start: auto;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+    }
+
+    .nav-items{
+        padding: 1rem 0;
+        .nav-item{
+            .nav{
+                color: var(--light);
+                font-size: 1.5rem;
+                gap: 1rem;
+                padding: 1rem;
+                cursor: pointer; 
+                &:hover{
+                    background-color: var(--dark);
+                }
+                .nav-title{
+                    transition: display 2s;
+                }
+                .nav-icon{
+                    // margin-inline-start: auto;
+                    font-size: 2rem;
+                }
+                &.activeRoute{
+                    background-color: var(--active);
+                }
+            }
+        }
+    }
+
+
+    .hidden{
+        display: none;
+        // transition: all ease-in-out 0.5s;
+    }
+}
